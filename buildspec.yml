@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to ECR...
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 314146331900.dkr.ecr.ap-southeast-1.amazonaws.com
+
+  build:
+    commands:
+      - echo Building docker image...
+      - docker build -t sigma .
+
+  post_build:
+    commands:
+      - echo Tagging images...
+      - docker tag sigma:latest 314146331900.dkr.ecr.ap-southeast-1.amazonaws.com/sigma:latest
+      - echo Pushing images...
+      - docker push 314146331900.dkr.ecr.ap-southeast-1.amazonaws.com/sigma:latest
+      - echo Successfully finished building
