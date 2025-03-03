@@ -3,17 +3,17 @@ os: linux
 
 files:
   - source: stop.sh
-    destination: stop.sh
+    destination: /home/ec2-user/stop.sh
   - source: start.sh
-    destination: start.sh
+    destination: /home/ec2-user/start.sh
 
 hooks:
   ApplicationStop:
-    - location: stop.sh
+    - location: /home/ec2-user/stop.sh
       timeout: 300
       runas: ec2-user
   ApplicationStart:
-    - location: start.sh
+    - location: /home/ec2-user/start.sh
       timeout: 300
       runas: ec2-user
 
