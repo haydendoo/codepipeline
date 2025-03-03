@@ -19,7 +19,7 @@ phases:
       - docker push 314146331900.dkr.ecr.ap-southeast-1.amazonaws.com/sigma:latest
       - echo Successfully finished building
 
-artifact:
+artifacts:
   files:
     - appsec.yml
     - start.sh
