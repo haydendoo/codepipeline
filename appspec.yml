@@ -1,15 +1,17 @@
 version: 0.0
 os: linux
 files:
-  - source: scripts/
-    destination: /home/ec2-user/scripts
+  - source: start.sh
+    destination: /home/ec2-user/start.sh
+  - source: stop.sh
+    destination: /home/ec2-user/stop.sh
 hooks:
   ApplicationStop:
-    - location: scripts/stop.sh
+    - location: /home/ec2-user/stop.sh
       timeout: 300
       runas: ec2-user
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: /home/ec2-user/start.sh
       timeout: 300
       runas: ec2-user
 
