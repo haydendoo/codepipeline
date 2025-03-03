@@ -1,5 +1,12 @@
 version: 0.0
 os: linux
+
+files:
+  - source: stop.sh
+    destination: stop.sh
+  - source: start.sh
+    destination: start.sh
+
 hooks:
   ApplicationStop:
     - location: stop.sh
