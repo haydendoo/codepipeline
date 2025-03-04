@@ -3,9 +3,9 @@ os: linux
 
 files:
   - source: stop.sh
-    destination: /home/ec2-user/stop.sh
+    destination: /home/ec2-user
   - source: start.sh
-    destination: /home/ec2-user/start.sh
+    destination: /home/ec2-user
 
 hooks:
   ApplicationStop:
