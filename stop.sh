@@ -1,3 +1,3 @@
 #!/bin/bash
-echo Stopping all containers
-docker stop $(docker ps -a -q)
+echo Stopping and removing all containers
+docker ps -aq | xargs -r docker rm -f
