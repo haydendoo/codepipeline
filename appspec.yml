@@ -1,19 +1,13 @@
 version: 0.0
 os: linux
 
-files:
-  - source: stop.sh
-    destination: scripts/
-  - source: start.sh
-    destination: scripts/
-
 hooks:
   ApplicationStop:
-    - location: scripts/stop.sh
+    - location: stop.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: start.sh
       timeout: 300
       runas: root
 
