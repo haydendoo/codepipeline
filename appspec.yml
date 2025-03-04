@@ -3,11 +3,11 @@ os: linux
 
 hooks:
   ApplicationStop:
-    - location: stop.sh
+    - location: sigma.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: start.sh
+    - location: boy.sh
       timeout: 300
       runas: root
 
