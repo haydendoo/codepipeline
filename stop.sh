@@ -1,2 +1,3 @@
 #!/bin/bash
-echo hijicn
+echo Stopping all containers
+docker stop $(docker ps -q)
